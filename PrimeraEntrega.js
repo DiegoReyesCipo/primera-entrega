@@ -34,10 +34,8 @@ formaPago()
     alert ('El valor de cada cuota es $' + result)
 }
 
-formaPago()*/
-   
-   
-   
+formaPago()*/ 
+     
       
     
 
@@ -71,6 +69,7 @@ const agregarCalles = () => {
 
         alert('Los 3 nombres de calle que elejiste son: ' + calles)
         alert ('Las opciones que hayan sido mas votadas seran las seleccionadas')
+        alert('probar git')
     }
     
 }
