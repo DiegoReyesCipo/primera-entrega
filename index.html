@@ -5,10 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primera entrega Diego Reyes</title>
+    <link rel="stylesheet" href="style.css">
+   
+
 </head>
 <body>
-    <script 
-    src="PrimeraEntrega.js">  
-    </script>
+    
+    <header>
+      
+    <div class="menu">
+        <img src="Images/MarDelDiegoLogo.jpg">
+       
+
+        <nav>
+            <ul>
+                <li><a href="#">La Propuesta</a></li>
+                <li><a href="#">Aporte de ideas</a></li>
+                <li><a href="#">Invertir en Diego</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+      </div>   
+    </header> 
+      <!-- <div>
+            <label for="opcionTerreno">Seleccionar opcion de Terreno:</label>
+            <br>
+            <br>
+            <button id="boton1" >Cebollita Soñador</button><br>
+            <button id="boton2" >Napolitano Ganador</button><br>
+            <button id="boton3" >Campeon Mexico 86</button><br>
+            <h3 id="opcion"></h3>
+      </div><br>
+      <input id= "formaPago" type ="text" value="Ingrese 1 , 6 o 10 cuotas " />
+      <button id="btnPago">Simular cuotas</button> -->
+    
+
+    <label for="opcionTerreno">Seleccionar opcion de Terreno:</label>
+    <select id="opcionTerreno" name="opcionTerreno" onchange="selecOp(event.target.value)">
+      <option value="Selecciona un terreno">Selecciona un terreno</option>
+      <option value="Cebollita Soñador">Cebollita Soñador</option>
+      <option value="Mexico 86">Mexico 86</option>
+      <option value="Napolitano Ganador">Napolitano Ganador</option>
+      </select>
+      <input id="valorDeSelect" type="text" name="" value="">
+      <button onclick="obtenerValor()" type="button" name="button">Obtener valor del Input</button>
+    <script  src="PrimeraEntrega.js">  </script>
 </body>
 </html>
+
