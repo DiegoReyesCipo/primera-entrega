@@ -49,7 +49,13 @@
       </select>
       <input id="valorDeSelect" type="text" name="" value="">
       <button onclick="obtenerValor()" type="button" name="button">Obtener valor del Input</button>
-    <script  src="PrimeraEntrega.js">  </script>
+     <!-- guardar productos en local Storage -->
+      <div
+         localStorage.setItem( "Listaproductos", JSON.stringify(productos));
+productos=JSON.parselocalStorage.getItem("Listaproductos");
+console.log(typeof(productos));></div>
+    
+      <script  src="PrimeraEntrega.js">  </script>
 </body>
 </html>
 

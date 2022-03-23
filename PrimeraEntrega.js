@@ -4,6 +4,13 @@ const productos = [
     {id: 2, titulo: 'Napolitano Ganador', precio: 12000, stock: 10, superficie: 250},
     {id: 3, titulo: 'Campeon Mexico 86', precio: 15000, stock: 10, superficie: 300},
 ]
+//guardar productos en local Storage
+
+localStorage.setItem( "Listaproductos", JSON.stringify(productos));
+productos=JSON.parselocalStorage.getItem("Listaproductos");
+console.log(typeof(productos));// hasta antes del getitem anterior lo mostraba. Ahora, no
+
+
 const btn = document.getElementById('boton1')
 
 
@@ -25,9 +32,7 @@ function selecOp(valor){
     console.log(valorEnvio)
       }
 
-
-
-
+      
 // const precio = 10000;
 // let interes = 1.4;
 // let precioFinanciado = 0;
