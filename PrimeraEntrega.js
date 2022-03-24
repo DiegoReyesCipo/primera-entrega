@@ -4,6 +4,9 @@ const productos = [
     {id: 2, titulo: 'Napolitano Ganador', precio: 12000, stock: 10, superficie: 250},
     {id: 3, titulo: 'Campeon Mexico 86', precio: 15000, stock: 10, superficie: 300},
 ]
+const precio = 10000;
+let interes = 1.4;
+let precioFinanciado = 0;
 //guardar productos en local Storage
 
 localStorage.setItem( "Listaproductos", JSON.stringify(productos));
@@ -32,10 +35,29 @@ function selecOp(valor){
     console.log(valorEnvio)
       }
 
+
+
+      //prueba aplicar after input para cuotas
       
-// const precio = 10000;
-// let interes = 1.4;
-// let precioFinanciado = 0;
+function addElementToList (){
+    const inputRef = document.getElementById('inputPago');
+    const value = inputRef.value;
+    
+    if (value !== '1'&& value !== '6' && value !== '10'){
+       alert(' ingrese 1, 6 o 10')
+      }
+      else if (value == 1) {
+               alert('Total a pagar por el lote'+ precio );//cambiar alert por DOM
+               console.log(value);
+      }
+      else if (value == 6 || value == 10){
+      console.log( 'el precio finnciado es: $' +( precioFinanciado = precio * interes));}//calcular cuotas
+// falta calcular valor cuotas y mostrarlo en DOM
+    }
+
+      
+ 
+
 // let pago;
 
 
