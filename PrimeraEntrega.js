@@ -31,10 +31,21 @@ function selecOp(valor){
   
   function obtenerValor(){
     valor = document.getElementById("valorDeSelect").value//obtener valor del input
-    valorEnvio = valor //declarar valor a la variable a usar en el ajax
-    console.log(valorEnvio)
-      }
+    valorEnvio = valor //declarar valor a la variable
 
+    productos.forEach(element => {
+    if (valor == productos.titulo){ 
+     console.log(productos.precio);
+    })
+    //aca quiero comparar el valor de titulo con el del imput y traer el precio asociado en el array
+}}
+        
+    
+    // console.log(valorEnvio)
+      
+    //   function traerPrecio(titulo,id,precio){
+    //       console.log('productos['+ id +']=' + titulo);
+    //   }
 
 
       //prueba aplicar after input para cuotas
@@ -54,6 +65,7 @@ function addElementToList (){
       console.log( 'el precio finnciado es: $' +( precioFinanciado = precio * interes));}//calcular cuotas
 // falta calcular valor cuotas y mostrarlo en DOM
     }
+    
 
       
  
