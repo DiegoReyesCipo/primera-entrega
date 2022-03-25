@@ -4,48 +4,32 @@ const productos = [
     {id: 2, titulo: 'Napolitano Ganador', precio: 12000, stock: 10, superficie: 250},
     {id: 3, titulo: 'Campeon Mexico 86', precio: 15000, stock: 10, superficie: 300},
 ]
-const precio = 10000;
+let precio = 10000;
 let interes = 1.4;
 let precioFinanciado = 0;
+
+const dropDown = document.getElementById('opcionTerreno')
+const btn = document.getElementById('btn')
+let valorImput
 //guardar productos en local Storage
+
+// llamar dato del select y traer precio
+dropDown.onchange = (e) => {
+    valorImput = e.target.value
+    console.log(e.target.value)
+}
+
+ btn.onclick = (e)=> {
+     const existe = productos.find(x => x.titulo ===valorImput)
+     existe ?  precio=existe.precio : console.log('NO hay Nada')
+     document.getElementById("valorDeSelect").value = precio  
+     // ademas quiero que En ese Select se vea el precio No se como hacer las dos cosas a la vez, porque esta depende de la otra
+}
+
 
 localStorage.setItem( "Listaproductos", JSON.stringify(productos));
 productos=JSON.parselocalStorage.getItem("Listaproductos");
 console.log(typeof(productos));// hasta antes del getitem anterior lo mostraba. Ahora, no
-
-
-const btn = document.getElementById('boton1')
-
-
-btn.addEventListener( 'click', seleccionTerreno )
-function seleccionTerreno() { 
-    const {titulo, precio} = productos [0]
-    document.getElementById("opcion").innerHTML= "El valor de "+ titulo+" es $" + precio ;
-    }
-//prueba select
-
-var valorEnvio = ""
-function selecOp(valor){
-    document.getElementById("valorDeSelect").value = valor//declararle el valor del select al input
-  }
-  
-  function obtenerValor(){
-    valor = document.getElementById("valorDeSelect").value//obtener valor del input
-    valorEnvio = valor //declarar valor a la variable
-
-    productos.forEach(element => {
-    if (valor == productos.titulo){ 
-     console.log(productos.precio);
-    })
-    //aca quiero comparar el valor de titulo con el del imput y traer el precio asociado en el array
-}}
-        
-    
-    // console.log(valorEnvio)
-      
-    //   function traerPrecio(titulo,id,precio){
-    //       console.log('productos['+ id +']=' + titulo);
-    //   }
 
 
       //prueba aplicar after input para cuotas
