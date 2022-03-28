@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primera entrega Diego Reyes</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="style.css">
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -29,18 +30,7 @@
         </nav> -->
       </div>   
     </header> 
-      <!-- <div>
-            <label for="opcionTerreno">Seleccionar opcion de Terreno:</label>
-            <br>
-            <br>
-            <button id="boton1" >Cebollita Soñador</button><br>
-            <button id="boton2" >Napolitano Ganador</button><br>
-            <button id="boton3" >Campeon Mexico 86</button><br>
-            <h3 id="opcion"></h3>
-      </div><br>
-      <input id= "formaPago" type ="text" value="Ingrese 1 , 6 o 10 cuotas " />
-      <button id="btnPago">Simular cuotas</button> -->
-    
+          
 
     <label for="opcion">Seleccionar opcion de Terreno:</label>
     <select id="opcionTerreno" name="opcionTerreno" >
@@ -57,9 +47,9 @@
       
       <main class="container mt-5">
        <div id ="app" class="container d-flex flex-column">
-       <h4 class = "text-left" >Forma de pago</h4>
+       <h4 class = "text-left" >Formas de pago: 1 , 6 o 10 cuotas</h4>
       <div class=" "d-flex>
-        <input type= "text" class="flex-grow-1 " id ="inputPago"/>
+        <input type= "text"  class="flex-grow-1 " id ="inputPago"/>
         <button class="btn btn-primary" id="add" onclick="addElementToList()">ADD</button>
         </div>          
         

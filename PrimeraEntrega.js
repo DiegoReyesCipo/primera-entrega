@@ -1,11 +1,11 @@
 console.log('Primera Entrega Diego Reyes');
-const productos = [
+let productos = [
     {id: 1, titulo: 'Cebollita Soñador', precio: 10000, stock: 15, superficie: 200},
     {id: 2, titulo: 'Napolitano Ganador', precio: 12000, stock: 10, superficie: 250},
     {id: 3, titulo: 'Campeon Mexico 86', precio: 15000, stock: 10, superficie: 300},
 ]
 let precio = 10000;
-let interes = 1.4;
+let interes = 1.3;
 let precioFinanciado = 0;
 
 const dropDown = document.getElementById('opcionTerreno')
@@ -23,13 +23,20 @@ dropDown.onchange = (e) => {
      const existe = productos.find(x => x.titulo ===valorImput)
      existe ?  precio=existe.precio : console.log('NO hay Nada')
      document.getElementById("valorDeSelect").value = precio  
+     Swal.fire(
+  'El precio esta expresado en Dolares!',
+  'USD '+ precio,
+  'success'
+)
+
      // ademas quiero que En ese Select se vea el precio No se como hacer las dos cosas a la vez, porque esta depende de la otra
 }
 
 
 localStorage.setItem( "Listaproductos", JSON.stringify(productos));
-productos=JSON.parselocalStorage.getItem("Listaproductos");
-console.log(typeof(productos));// hasta antes del getitem anterior lo mostraba. Ahora, no
+productos=JSON.parse(localStorage.getItem("Listaproductos"));
+// console.log(localStorage.getItem('Listaproductos'));
+console.log(typeof(productos));
 
 
       //prueba aplicar after input para cuotas
@@ -39,14 +46,15 @@ function addElementToList (){
     const value = inputRef.value;
     
     if (value !== '1'&& value !== '6' && value !== '10'){
-       alert(' ingrese 1, 6 o 10')
+        Swal.fire (' Ingrese 1, 6 o 10')
       }
       else if (value == 1) {
                alert('Total a pagar por el lote'+ precio );//cambiar alert por DOM
                console.log(value);
       }
       else if (value == 6 || value == 10){
-      console.log( 'el precio finnciado es: $' +( precioFinanciado = precio * interes));}//calcular cuotas
+        precioFinanciado = precio * interes
+      console.log( 'el precio finnciado es: $' +(  precioFinanciado));}//calcular cuotas
 // falta calcular valor cuotas y mostrarlo en DOM
     }
     
