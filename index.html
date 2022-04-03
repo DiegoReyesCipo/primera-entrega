@@ -31,18 +31,19 @@
       </div>   
     </header> 
           
-
+  <div class="container mt-5" >
     <label for="opcion">Seleccionar opcion de Terreno:</label>
     <select id="opcionTerreno" name="opcionTerreno" >
       <option value="Selecciona un terreno">Selecciona un terreno</option>
       <option value="Cebollita Soñador">Cebollita Soñador</option>
-      <option value="Campeon Mexico 86">Campeon Mexico 86</option>
       <option value="Napolitano Ganador">Napolitano Ganador</option>
-      </select>
+      <option value="Campeon Mexico 86">Campeon Mexico 86</option>
+    </select>
+
 
       <input id="valorDeSelect" type="text" name="" value="">
-      <button id="btn" type="button" >Obtener valor del Input</button>
-     
+      <button id="btn" type="button" class="btn-success" >Obtener valor del Input</button>
+    </div>
 
       
       <main class="container mt-5">
@@ -51,7 +52,10 @@
       <div class=" "d-flex>
         <input type= "text"  class="flex-grow-1 " id ="inputPago"/>
         <button class="btn btn-primary" id="add" onclick="addElementToList()">ADD</button>
-        </div>          
+        </div> 
+        <div>
+          <p id="resultado"> </p>
+        </div>    
         
        </div>
       </main>

@@ -8,6 +8,8 @@ let precio = 10000;
 let interes = 1.3;
 let precioFinanciado = 0;
 
+const URL= 'https://criptoya.com/api/dolar'
+
 const dropDown = document.getElementById('opcionTerreno')
 const btn = document.getElementById('btn')
 let valorImput
@@ -20,22 +22,21 @@ dropDown.onchange = (e) => {
 }
 
  btn.onclick = (e)=> {
-     const existe = productos.find(x => x.titulo ===valorImput)
-     existe ?  precio=existe.precio : console.log('NO hay Nada')
+     const existe = productos.find(x => x.titulo === valorImput);
+     existe ?  precio = existe.precio : console.log('NO hay Nada');
      document.getElementById("valorDeSelect").value = precio  
      Swal.fire(
   'El precio esta expresado en Dolares!',
   'USD '+ precio,
   'success'
-)
-
-     // ademas quiero que En ese Select se vea el precio No se como hacer las dos cosas a la vez, porque esta depende de la otra
-}
+  
+    );
+    
+    }
 
 
 localStorage.setItem( "Listaproductos", JSON.stringify(productos));
 productos=JSON.parse(localStorage.getItem("Listaproductos"));
-// console.log(localStorage.getItem('Listaproductos'));
 console.log(typeof(productos));
 
 
@@ -54,9 +55,40 @@ function addElementToList (){
       }
       else if (value == 6 || value == 10){
         precioFinanciado = precio * interes
+
       console.log( 'el precio finnciado es: $' +(  precioFinanciado));}//calcular cuotas
 // falta calcular valor cuotas y mostrarlo en DOM
+
+
+
     }
+
+    //peticion a la API Crypto ya para obtener valor dolar
+    fetch (URL)
+.then(respuesta => respuesta.json())
+.then (datos => {
+    
+    console.log("Console log datos.blue", datos.blue);
+    let totalBlue = datos.blue;
+
+      // agregarNameAlDOM()// recien aca llamo la funcion para modificar DOM
+
+});
+//console.log(typeof(datos));
+console.log("total", precio * datos.blue );
+const fetchBlue = () => {
+    fetch (URL)
+    .then(res=> res.json())
+    .then( datos => {
+        let totalBlue = datos.blue;
+        console.log('console log fetch.Blue', totalBlue );
+    }) 
+}
+ 
+
+
+    
+   
     
 
       
