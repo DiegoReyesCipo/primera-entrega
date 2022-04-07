@@ -12,29 +12,32 @@ const URL= 'https://criptoya.com/api/dolar'
 
 const dropDown = document.getElementById('opcionTerreno')
 const btn = document.getElementById('btn')
-let valorImput
-//guardar productos en local Storage
+let valorInput= 0;
+
 
 // llamar dato del select y traer precio
 dropDown.onchange = (e) => {
-    valorImput = e.target.value
-    console.log(e.target.value)
+    valorInput = e.target.value
+    console.log(e.target.value)// Trae el texto dependiendo el del select
 }
 
  btn.onclick = (e)=> {
-     const existe = productos.find(x => x.titulo === valorImput);
-     existe ?  precio = existe.precio : console.log('NO hay Nada');
-     document.getElementById("valorDeSelect").value = precio  
+     const existe = productos.find(x => x.titulo === valorInput);// comparo los dos textos 
+     existe ?  valor = existe.precio : console.log('NO hay Nada');
+     document.getElementById("valorDeSelect").value = valor ; 
+     console.log("valor dentro del onclick", valor);
      Swal.fire(
   'El precio esta expresado en Dolares!',
-  'USD '+ precio,
+  'USD '+ valor, 
   'success'
   
-    );
-    
-    }
+   );
+}
+console.log("valor fuera onclick",valor);
 
 
+
+//guardar productos en local Storage
 localStorage.setItem( "Listaproductos", JSON.stringify(productos));
 productos=JSON.parse(localStorage.getItem("Listaproductos"));
 console.log(typeof(productos));

@@ -5,7 +5,8 @@
 }
 
 body {
-    background: #53e7e7;
+   
+    
     font-family: "calibri";
     }
     header {
@@ -17,6 +18,7 @@ body {
       }
       
       .menu {
+       
         width: 1000px;
         margin: 0 auto;
       }
